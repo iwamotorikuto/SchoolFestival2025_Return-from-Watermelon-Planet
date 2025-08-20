@@ -1,0 +1,34 @@
+#pragma once
+
+
+class Player;
+
+class MovingFloor : public IGameObject
+{
+public:
+	MovingFloor();
+	~MovingFloor();
+	bool Start() override;
+	void Update() override;
+	void Render(RenderContext& rc) override;
+	void SetPosition(const Vector3& position)
+	{
+		m_position = position;
+	}
+	void Move();
+private:
+	
+	Vector3 m_position;
+	Vector3 m_firstPosition;
+	ModelRender m_modelRender;
+	Player* m_player = nullptr;
+	PhysicsStaticObject m_physicsStaticObject;     //静的物理オブジェクト
+	CollisionObject* m_collisionObject = nullptr; //コリジョンオブジェクト
+	enum enMovingFloorState
+	{
+		enMovingFloorState_MovingRight,
+		enMovingFloorState_MovingLeft
+	};
+	enMovingFloorState m_MovingFloorState = enMovingFloorState_MovingRight;
+};
+
