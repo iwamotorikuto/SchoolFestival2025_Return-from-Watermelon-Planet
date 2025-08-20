@@ -77,8 +77,6 @@ void Enemy::Update()
 	Chase();
 	//回転処理。
 	Rotation();
-	//当たり判定。
-	Collision();
 	//攻撃処理。
 	Attack();
 	//アニメーションの再生。
@@ -148,6 +146,8 @@ void Enemy::Attack()
 		MakeAttackCollision();
 	}
 }
+
+
 
 const bool Enemy::SearchPlayer() const
 {

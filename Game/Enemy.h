@@ -58,8 +58,6 @@ private:
 	void Rotaion();
 	///攻撃処理
 	void Attack();
-	///プレイヤーの攻撃との当たり判定処理。
-	void Collision();
 	//プレイヤーを探索する。
 	///<returns>プレイヤーが見つからなかったらtrue。
 	const bool SearchPlayer() const;
